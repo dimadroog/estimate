@@ -83,7 +83,7 @@
                                     </div>
                                 </template>
                                 <template v-else>
-                                    <div class="flex-grow-1 px-1">
+                                    <div class="flex-grow-1 px-lg-1">
                                         <div class="mb-2">
                                             <label class="form-label" for="from">
                                                 оценка,

@@ -153,6 +153,14 @@ export default {
                 result += 'Итого по оценке: ' + this.sum('from') + ' ' + unit;
             }
 
+            result += '\n';
+            result += '\n';
+            result += '\n';
+
+            result += '__________________________________________________________\n';
+            result += 'Оценка составлена с помощью проекта GetEstimate\n';
+            result += 'https://dimadroog.github.io/estimate/';
+
             navigator.clipboard.writeText(result);
 
             this['copyResultMessage'] = 'Результат скопирован в буфер обмена';
@@ -176,5 +184,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+ol li {
+    cursor: move;
+}
 </style>
