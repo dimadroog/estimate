@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-lg-5 pe-auto pe-lg-1">
                             <div class="mb-2">
-                                <label class="form-label" for="title">Название</label>
+                                <label class="form-label text-muted" for="title">Название</label>
                                 <input
                                     type="text"
                                     id="title"
@@ -41,13 +41,13 @@
                                 <template v-if="settings.fork">
                                     <div class="flex-grow-1 w-50 pe-1">
                                         <div class="mb-2">
-                                            <label class="form-label" for="from">
+                                            <label class="form-label text-muted" for="from">
                                                 от,
                                                 <template v-if="settings.unit">
-                                                    <span class="text-muted">рублей</span>
+                                                    рублей
                                                 </template>
                                                 <template v-else>
-                                                    <span class="text-muted">часов</span>
+                                                    часов
                                                 </template>
                                             </label>
                                             <input
@@ -62,13 +62,13 @@
                                     </div>
                                     <div class="flex-grow-1 w-50 ps-1">
                                         <div class="mb-2">
-                                            <label class="form-label" for="to">
+                                            <label class="form-label text-muted" for="to">
                                                 до,
                                                 <template v-if="settings.unit">
-                                                    <span class="text-muted">рублей</span>
+                                                    рублей
                                                 </template>
                                                 <template v-else>
-                                                    <span class="text-muted">часов</span>
+                                                    часов
                                                 </template>
                                             </label>
                                             <input

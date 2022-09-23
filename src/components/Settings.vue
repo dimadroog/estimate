@@ -115,6 +115,42 @@
                         </label>
                     </div>
                 </div>
+                <hr class="hr">
+                <div>
+                    <h5 class="h6">Перетаскивание элементов:</h5>
+                    <div class="form-check">
+                        <input
+                            id="settingsDrag-0"
+                            class="form-check-input"
+                            name="drag"
+                            type="radio"
+                            :value=1
+                            v-model="settings.drag"
+                        />
+                        <label 
+                            class="form-check-label"
+                            for="settingsDrag-0"
+                        >
+                            Включить
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            id="settingsDrag-1"
+                            class="form-check-input"
+                            name="drag"
+                            type="radio"
+                            :value=0
+                            v-model="settings.drag"
+                        />
+                        <label 
+                            class="form-check-label"
+                            for="settingsDrag-1"
+                        >
+                            Отключить
+                        </label>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -130,6 +166,7 @@ export default {
                 fork: 1,
                 numbers: 1,
                 isOpen: false,
+                drag: 0,
             },
         };
     },

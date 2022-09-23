@@ -1,6 +1,7 @@
 <template>
-    <ul v-if="items.length > 0" class="p-0">
+    <ul v-if="items.length > 0" :class="{'drag': settings.drag == 1}" class="p-0">
         <draggable 
+            :disabled='settings.drag == 0'
             :list="items"
             @start="drag=true" 
             @end="drag=false" 
@@ -16,7 +17,7 @@
                         <div class="row">
                             <div class="col-lg-5 pe-auto pe-lg-1">
                                 <div class="mb-2">
-                                    <label class="form-label" :for="'title-' + index">Название</label>
+                                    <label class="form-label text-muted" :for="'title-' + index">Название</label>
                                     <input 
                                         type="text" 
                                         :id="'title-' + index"
@@ -32,13 +33,13 @@
                                     <template v-if="settings.fork">
                                     <div class="flex-grow-1 w-50 pe-1">
                                         <div class="mb-2">
-                                            <label class="form-label" :for="'from-' + index">
+                                            <label class="form-label text-muted" :for="'from-' + index">
                                                 от,
                                                 <template v-if="settings.unit">
-                                                    <span class="text-muted">рублей</span>
+                                                    рублей
                                                 </template>
                                                 <template v-else>
-                                                    <span class="text-muted">часов</span>
+                                                    часов
                                                 </template>
                                             </label>
                                             <input 
@@ -54,13 +55,13 @@
                                     </div>
                                     <div class="flex-grow-1 w-50 ps-1">
                                         <div class="mb-2">
-                                            <label class="form-label" :for="'to-' + index">
+                                            <label class="form-label text-muted" :for="'to-' + index">
                                                 до,
                                                 <template v-if="settings.unit">
-                                                    <span class="text-muted">рублей</span>
+                                                    рублей
                                                 </template>
                                                 <template v-else>
-                                                    <span class="text-muted">часов</span>
+                                                    часов
                                                 </template>
                                             </label>
                                             <input 
@@ -188,7 +189,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-li.card {
-    cursor: move;
-}
+    ul.drag li.card {
+        cursor: move;
+    }
 </style>
