@@ -108,10 +108,14 @@ export default {
     },
     methods: {
         sum: function (prop) {
-            var total = 0;
-            for (var i = 0, _len = this['items'].length; i < _len; i++) {
+            let total = 0;
+            for (let i = 0, _len = this['items'].length; i < _len; i++) {
                 if (this['items'][i]['isExclude'] === false) {
-                    total += parseInt(this['items'][i][prop]);
+                    let value = this['items'][i][prop];
+                    if(!value){
+                        value = 0;
+                    }
+                    total += parseFloat(value);
                 }
             }
             return total;

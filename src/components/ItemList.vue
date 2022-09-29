@@ -50,6 +50,7 @@
                                                 :disabled="element.isExclude == true"
                                                 min="0"
                                                 @focus="$event.target.select()"
+                                                @change="isEmpty(element, 'from')"
                                             >
                                         </div>
                                     </div>
@@ -72,6 +73,7 @@
                                                 :disabled="element.isExclude == true"
                                                 min="0"
                                                 @focus="$event.target.select()"
+                                                @change="isEmpty(element, 'to')"
                                             >
                                         </div>
                                     </div>
@@ -96,6 +98,7 @@
                                                     :disabled="element.isExclude == true"
                                                     min="0"
                                                     @focus="$event.target.select()"
+                                                    @change="isEmpty(element, 'from')"
                                                 >
                                             </div>
                                         </div>
@@ -183,6 +186,11 @@ export default {
         deleteItem(index) {
             this.$emit("delete-item", index);
         },
+        isEmpty(element, prop) {
+            if (element[prop] === ''){
+                element[prop] = 0;
+            }
+        }
     },
 };
 </script>
